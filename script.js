@@ -25,21 +25,28 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   let enterFirstName = prompt("Enter first name:");
   console.log(`User has entered ${enterFirstName} as a first name.`);
+
   let enterLastName = prompt("Enter last name:");
   console.log(`User has entered ${enterLastName} as a last name.`);
+
   let enterSalary = prompt("Enter salary:")
   console.log(`User has entered ${enterSalary} as a salary.`);
+
   //create an object with this info in it, add obj to array
   let employeeData = {
-    enterFirstName: firstName,
-    enterLastName: lastName,
-    enterSalary: salary
+    enterFirstName: enterFirstName,
+    enterLastName: enterLastName,
+    enterSalary: enterSalary
   };
   employeesArray.push(employeeData);
   console.log(employeesArray);
   const addAnother = confirm("Do you want to add another employee?");
-  collectEmployees()
-}
+  if (addAnother){
+    collectEmployees()
+  } else {
+    trackEmployeeData()
+  }
+};
 
 // rinse and repeat
 // return final array
