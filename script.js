@@ -45,8 +45,7 @@ const collectEmployees = function() {
     trackEmployeeData()
     collectEmployees()
   } else {
-    trackEmployeeData()
-
+   return employeesArray
   }
 };
 
@@ -56,7 +55,7 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function() {
   // TODO: Calculate and display the average salary
-  //get each item, total their sum, and divide by number of items
+  // get each item, total their sum, and divide by number of items
   // document.getElementById(enterSalary)
   
 }
@@ -66,6 +65,10 @@ const getRandomEmployee = function() {
     const randomEmployee = genRandomNumber(0, employeesArray.length -1);
     console.log(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
     alert(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
+
+
+
+    return randomEmployee
 }
 
 
