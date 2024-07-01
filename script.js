@@ -42,22 +42,19 @@ const collectEmployees = function() {
   console.table(employeesArray);
   const addAnother = confirm("Do you want to add another employee?");
   if (addAnother){
-    trackEmployeeData()
-    collectEmployees()
+    trackEmployeeData();
   } else {
-   return employeesArray
+   return newTableRow;
   }
 };
 
-// rinse and repeat
-// return final array
+
 
 // Display the average salary
 const displayAverageSalary = function() {
   // TODO: Calculate and display the average salary
-  // get each item, total their sum, and divide by number of items
-  // document.getElementById(enterSalary)
-  
+      // get each item, total their sum, and divide by number of items
+  document.getElementById(enterSalary)
 }
 
 // Select a random employee
@@ -65,9 +62,6 @@ const getRandomEmployee = function() {
     const randomEmployee = genRandomNumber(0, employeesArray.length -1);
     console.log(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
     alert(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
-
-
-
     return randomEmployee
 }
 
