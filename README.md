@@ -12,8 +12,6 @@ This Homework assignment was completed for Unit Three of the U of M Bootcamp, to
 
 Starter code used and modified with permission for instructional purposes from U of M Bootcamp, Copyright 2024 edX.
 
-Thanks to Eric Meyer for the [start.css](http://meyerweb.com/eric/tools/css/reset/) code.
-
 Shoutout to [this blog post](https://www.seoptimer.com/blog/favicon-not-showing-up/) and [this tool](https://favicon.io/favicon-converter/) for the help with my favicon stuff.
 
 ## License
