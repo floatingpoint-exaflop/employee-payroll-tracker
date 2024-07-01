@@ -22,7 +22,7 @@ let employeesArray = [];
 
 // Collect employee data:
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
+  // Get user input to create and return an array of employee objects
   let enterFirstName = prompt("Enter first name:");
   console.log(`User has entered ${enterFirstName} as a first name.`);
 
@@ -34,17 +34,19 @@ const collectEmployees = function() {
 
   //create an object with this info in it, add obj to array
   let employeeData = {
-    enterFirstName: enterFirstName,
-    enterLastName: enterLastName,
-    enterSalary: enterSalary
+    firstName: enterFirstName,
+    lastName: enterLastName,
+    salary: enterSalary
   };
   employeesArray.push(employeeData);
-  console.log(employeesArray);
+  console.table(employeesArray);
   const addAnother = confirm("Do you want to add another employee?");
   if (addAnother){
+    trackEmployeeData()
     collectEmployees()
   } else {
     trackEmployeeData()
+
   }
 };
 
@@ -55,6 +57,7 @@ const collectEmployees = function() {
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
   //get each item, total their sum, and divide by number of items
+  // document.getElementById(enterSalary)
 }
 
 // Select a random employee
