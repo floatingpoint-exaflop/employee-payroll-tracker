@@ -1,19 +1,3 @@
-/* File explained:
-1. There is an event listener on the Add Employees button in html/UI 
-  a. (which in turn is linked to the js via the first defined variable, addEmployeesButton).
-2. Clicking it triggers the trackEmployeeData, which in turn:
-  a. Declares a variable 'employees' which is tied to the collectEmployees variable function near the top of the js file (which will be filled out by me).
-  b. Logs a table into the console, containing the employees collected by the collectEmployees variable function, 
-  c. Calls the displayAverageSalary function near the top of the js file (which will be filled out by me).
-  d. Logs a bar ASCII into the console.
-  e. Calls the getRandomEmployee function near the top of the js file (which will be filled out by me).
-  f. Sort method applied to 'employees' by 'lastname', which seems to need to be defined globally by me.
-  g. Displays the employee data.
-
-
-*/
-//=======================================================================
-
 //1a. The first defined variable, addEmployeesBtn makes a reference to the #add-employees-btn element (The Add Employees button id-tagged element in the index.html file). This allows the event listener at the bottom of the js file to work.
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
@@ -44,7 +28,7 @@ const collectEmployees = function() {
   if (addAnother){
     trackEmployeeData();
   } else {
-   return newTableRow;
+   return ;
   }
 };
 
