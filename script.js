@@ -19,10 +19,9 @@ const collectEmployees = function() {
     salary: enterSalary
   };
   employeesArray.push(employeeData);
-  // console.table(employeesArray);
   const addAnother = confirm("Do you want to add another employee?");
   if (addAnother){
-    trackEmployeeData(employeeData);
+    return collectEmployees();
   } else {
    return employeesArray;
   }
