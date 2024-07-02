@@ -39,62 +39,48 @@ const displayAverageSalary = function() {
   const totalPayroll = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
   // Calculate the average salary
   const avgSalary = totalPayroll / employeesArray.length;
-  console.log(`The average employee salary is $${avgSalary.toFixed(2)}`);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${avgSalary.toFixed(2)}`);
 }
-const randomize = Math.floor(Math.random() * employeesArray.length)
 
+// randomize index
+const randomize = Math.floor(Math.random() * employeesArray.length)
 // Select a random employee
 const getRandomEmployee = function() {
-  //randomize index and employee
+  //randomize employee
   const randomEmployee = employeesArray[randomize];
   // const { firstName, lastName } = randomEmployee;
-  console.log(`System has picked ${randomEmployee.firstName} ${randomEmployee.lastName} as a random employee.`);
-  alert(`System has picked ${randomEmployee.firstName} ${randomEmployee.lastName} as a random employee.`);
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+  // alert(`System has picked ${randomEmployee.firstName} ${randomEmployee.lastName} as a random employee.`);
 }
-
-//   const randomEmployee = genRandomNumber(0, employeesArray.length -1);  
-
-//   return randomEmployee
-
-
 
 /*
   ====================
   STARTER CODE
   Do not modify any of the code below this line:
 */
-
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
   // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
-
   // Clear the employee table
   employeeTable.innerHTML = '';
-
   // Loop through the employee data and create a row for each employee
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
-
     const newTableRow = document.createElement("tr");
-
     const firstNameCell = document.createElement("td");
     firstNameCell.textContent = currentEmployee.firstName;
     newTableRow.append(firstNameCell);
-
     const lastNameCell = document.createElement("td");
     lastNameCell.textContent = currentEmployee.lastName;
     newTableRow.append(lastNameCell);
-
     const salaryCell = document.createElement("td");
     // Format the salary as currency
     salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US",{
       style:"currency",
       currency:"USD"
     });
-
     newTableRow.append(salaryCell);
-
     employeeTable.append(newTableRow);
   }
 }
