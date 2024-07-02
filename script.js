@@ -4,18 +4,14 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // create empty array capable of holding three employee properties
 let employeesArray = [];
 
-// Collect employee data:
+//When called by trackEmployeeData, this function collects employee data - user input to create and return an array of employee objects
 const collectEmployees = function() {
-  // Get user input to create and return an array of employee objects
   let enterFirstName = prompt("Enter first name:");
   console.log(`User has entered ${enterFirstName} as a first name.`);
-
   let enterLastName = prompt("Enter last name:");
   console.log(`User has entered ${enterLastName} as a last name.`);
-
   let enterSalary = prompt("Enter salary:")
   console.log(`User has entered ${enterSalary} as a salary.`);
-
   //create an object with this info in it, add obj to array
   let employeeData = {
     firstName: enterFirstName,
@@ -23,32 +19,44 @@ const collectEmployees = function() {
     salary: enterSalary
   };
   employeesArray.push(employeeData);
-  console.table(employeesArray);
+  // console.table(employeesArray);
   const addAnother = confirm("Do you want to add another employee?");
   if (addAnother){
-    trackEmployeeData();
+    trackEmployeeData(employeeData);
   } else {
-   return ;
+   return employeesArray;
   }
 };
+// Conclude collecting of employee data
 
 
-
-// Display the average salary
-const displayAverageSalary = function() {
-  // TODO: Calculate and display the average salary
+// Display the average salary: Calculate and display the average salary
       // get each item, total their sum, and divide by number of items
-  document.getElementById(enterSalary)
+const displayAverageSalary = function() {
+  // Convert string salaries to numbers
+  employeesArray.forEach(employee => {
+  employee.salary = parseInt(employee.salary, 10); // Convert string to integer
+});
+  //get total sum of salaries:
+  const totalPayroll = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
+  // Calculate the average salary
+  const avgSalary = totalPayroll / employeesArray.length;
+  console.log(`The average employee salary is $${avgSalary.toFixed(2)}`);
 }
+
 
 // Select a random employee
 const getRandomEmployee = function() {
-    const randomEmployee = genRandomNumber(0, employeesArray.length -1);
-    console.log(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
-    alert(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
-    return randomEmployee
+  //randomize index and employee
+  const randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
+  const { firstName, lastName } = randomEmployee;
+  console.log(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
+  alert(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
 }
 
+//   const randomEmployee = genRandomNumber(0, employeesArray.length -1);  
+
+//   return randomEmployee
 
 
 
