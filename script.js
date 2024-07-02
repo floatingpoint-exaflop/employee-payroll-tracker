@@ -29,9 +29,7 @@ const collectEmployees = function() {
 };
 // Conclude collecting of employee data
 
-
-// Display the average salary: Calculate and display the average salary
-      // get each item, total their sum, and divide by number of items
+// Calculate and display the average salary
 const displayAverageSalary = function() {
   // Convert string salaries to numbers
   employeesArray.forEach(employee => {
@@ -43,15 +41,15 @@ const displayAverageSalary = function() {
   const avgSalary = totalPayroll / employeesArray.length;
   console.log(`The average employee salary is $${avgSalary.toFixed(2)}`);
 }
-
+const randomize = Math.floor(Math.random() * employeesArray.length)
 
 // Select a random employee
 const getRandomEmployee = function() {
   //randomize index and employee
-  const randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
-  const { firstName, lastName } = randomEmployee;
-  console.log(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
-  alert(`System has picked ${employeesArray[randomEmployee]} as a random employee.`);
+  const randomEmployee = employeesArray[randomize];
+  // const { firstName, lastName } = randomEmployee;
+  console.log(`System has picked ${randomEmployee.firstName} ${randomEmployee.lastName} as a random employee.`);
+  alert(`System has picked ${randomEmployee.firstName} ${randomEmployee.lastName} as a random employee.`);
 }
 
 //   const randomEmployee = genRandomNumber(0, employeesArray.length -1);  
