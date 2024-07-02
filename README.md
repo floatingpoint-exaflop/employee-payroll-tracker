@@ -20,7 +20,7 @@ File explained:
 [Click here to view the deployed webpage.](https://floatingpoint-exaflop.github.io/employee-payroll-tracker)
 
 ## Screenshot of Deployed Version
-![image](./assets/images/deployed-screenshot.png)
+![image](./assets/deployed-screenshot.png)
 
 ## Credits
 
